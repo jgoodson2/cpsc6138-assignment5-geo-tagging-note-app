@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">cpsc6138-assignment5-geo-tagging-note-app</string>
+    <string name="create_new_entry">create new entry</string>
 </resources>
