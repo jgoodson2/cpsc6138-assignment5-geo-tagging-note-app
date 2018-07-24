@@ -37,6 +37,7 @@
             android:id="@+id/btn_newEntry"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/create_new_entry" />
+            android:text="@string/create_new_entry"
+            android:onClick="goToNewEntry"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
