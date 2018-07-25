@@ -5,11 +5,13 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.text.SimpleDateFormat;
 
 public class DAO extends SQLiteOpenHelper {
 
+    private static final String TAG = "DAO";
     private static final int DATABASE_VERSION = 2;
     private static final String DATABASE_NAME = "notes.db";
     public static final String TABLE_ENTRY = "entry";
@@ -70,5 +72,6 @@ public class DAO extends SQLiteOpenHelper {
         Cursor c = db.rawQuery(sql, null);
         return c;
     }
+
 
 }

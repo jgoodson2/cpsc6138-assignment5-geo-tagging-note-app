@@ -43,11 +43,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String selection = adapterView.getItemAtPosition(i).toString();
-                String id = selection.substring(selection.indexOf("Entry ID"));
+                String id = selection.substring(selection.indexOf("Entry ID")).trim();
                 Log.d(TAG, "onItemClick: You Clicked on " + id);
             }
         });
-
     }
 
     public void goToNewEntry(View view) {
