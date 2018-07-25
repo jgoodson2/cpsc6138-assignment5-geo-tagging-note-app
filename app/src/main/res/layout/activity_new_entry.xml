@@ -34,8 +34,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:hint="@string/enter_subject"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/txt_newEntry_content"
