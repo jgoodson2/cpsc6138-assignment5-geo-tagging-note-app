@@ -66,4 +66,12 @@ public class DAO extends SQLiteOpenHelper {
         db.close();
         return c;
     }
+
+    public int getEntryCount() {
+        SQLiteDatabase db = getWritableDatabase();
+        String sql = "SELECT * FROM " + TABLE_ENTRY + " WHERE 1";
+        Cursor c = db.rawQuery(sql, null);
+        db.close();
+        return c.getCount();
+    }
 }
