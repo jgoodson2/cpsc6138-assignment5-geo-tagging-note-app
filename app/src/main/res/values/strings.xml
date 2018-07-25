@@ -4,4 +4,5 @@
     <string name="enter_subject">Enter Subject</string>
     <string name="enter_note">Enter Note</string>
     <string name="add_entry">add entry</string>
+    <string name="back_to_view_all_entries">back to view all entries</string>
 </resources>

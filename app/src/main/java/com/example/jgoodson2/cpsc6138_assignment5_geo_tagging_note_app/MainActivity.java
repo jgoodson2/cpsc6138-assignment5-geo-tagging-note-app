@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void populateEntriesListView() {
-        Cursor data = dao.getAllEntries();
+        Cursor data = dao.getAllRecords();
         ArrayList<String> listData = new ArrayList<>();
         while (data.moveToNext()) {
             listData.add("\"" + data.getString(2) + "\"  [entered " + data.getString(1) + "] Entry ID: " + data.getString(0));
@@ -43,8 +43,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String selection = adapterView.getItemAtPosition(i).toString();
-                String id = selection.substring(selection.indexOf("Entry ID")).trim();
+                String id = selection.substring(selection.indexOf("Entry ID") + 9).trim();
                 Log.d(TAG, "onItemClick: You Clicked on " + id);
+
+                Intent viewEntryIntent = new Intent(MainActivity.this, ViewEntryActivity.class);
+                viewEntryIntent.putExtra("id", Integer.parseInt(id));
+                startActivity(viewEntryIntent);
+
             }
         });
     }

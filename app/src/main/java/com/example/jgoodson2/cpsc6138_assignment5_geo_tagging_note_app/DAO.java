@@ -66,12 +66,18 @@ public class DAO extends SQLiteOpenHelper {
         }
     }
 
-    public Cursor getAllEntries() {
+    public Cursor getAllRecords() {
         SQLiteDatabase db = getWritableDatabase();
         String sql = "SELECT * FROM " + TABLE_ENTRY;
         Cursor c = db.rawQuery(sql, null);
         return c;
     }
 
+    public Cursor getRecordById(int id) {
+        SQLiteDatabase db = getWritableDatabase();
+        String sql = "SELECT * FROM " + TABLE_ENTRY + " WHERE " + COLUMN_0_ID + " = " + String.valueOf(id);
+        Cursor c = db.rawQuery(sql, null);
+        return c;
+    }
 
 }
