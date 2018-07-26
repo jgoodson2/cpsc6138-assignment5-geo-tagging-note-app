@@ -8,8 +8,8 @@ public class Entry {
     private Date _dateCreated;
     private String _subject;
     private String _content;
-    private float _latitude;
-    private float _longitude;
+    private double _latitude;
+    private double _longitude;
 
     public int get_id() {
         return _id;
@@ -43,7 +43,7 @@ public class Entry {
         this._content = _content;
     }
 
-    public float get_latitude() {
+    public double get_latitude() {
         return _latitude;
     }
 
@@ -51,7 +51,7 @@ public class Entry {
         this._latitude = _latitude;
     }
 
-    public float get_longitude() {
+    public double get_longitude() {
         return _longitude;
     }
 
@@ -59,7 +59,7 @@ public class Entry {
         this._longitude = _longitude;
     }
 
-    public Entry(Date _dateCreated, String _subject, String _content, float _latitude, float _longitude) {
+    public Entry(Date _dateCreated, String _subject, String _content, double _latitude, double _longitude) {
 
         this._dateCreated = _dateCreated;
         this._subject = _subject;

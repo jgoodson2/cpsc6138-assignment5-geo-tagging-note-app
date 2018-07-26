@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,7 +13,7 @@ public class ViewEntryActivity extends AppCompatActivity {
 
 
     private static final String TAG = "ViewEntryActivity";
-    private TextView lbl_viewEntry_subject, lbl_viewEntry_content, lbl_viewEntry_dateCreated;
+    private TextView lbl_viewEntry_subject, lbl_viewEntry_content, lbl_viewEntry_info;
     private DAO dao;
     private int selectedID;
     Cursor recordData;
@@ -26,7 +25,9 @@ public class ViewEntryActivity extends AppCompatActivity {
 
         lbl_viewEntry_subject = (TextView) findViewById(R.id.lbl_viewEntry_subject);
         lbl_viewEntry_content = (TextView) findViewById(R.id.lbl_viewEntry_content);
-        lbl_viewEntry_dateCreated = (TextView) findViewById(R.id.lbl_viewEntry_dateCreated);
+        lbl_viewEntry_info = (TextView) findViewById(R.id.lbl_viewEntry_info);
+//        lbl_viewEntry_latitude = (TextView) findViewById(R.id.lbl_viewEntry_latitude);
+//        lbl_viewEntry_longitude = (TextView) findViewById(R.id.lbl_viewEntry_longitude);
         dao = new DAO(this, null, null, 1);
 
         Intent receivedIntent = getIntent();
@@ -39,7 +40,10 @@ public class ViewEntryActivity extends AppCompatActivity {
             recordData = dao.getRecordById(selectedID);
             while (recordData.moveToNext()) {
                 lbl_viewEntry_subject.setText(recordData.getString(2));
-                lbl_viewEntry_dateCreated.setText("Date created: " + recordData.getString(1));
+                lbl_viewEntry_info.setText("Date created: " + recordData.getString(1) +
+                        "\nLatitude: " + recordData.getString(4) +
+                        "\nLongitude: " + recordData.getString(5)
+                );
                 lbl_viewEntry_content.setText(recordData.getString(3));
             }
         }
